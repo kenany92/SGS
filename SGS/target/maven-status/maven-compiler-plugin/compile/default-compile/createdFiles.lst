@@ -1,0 +1,16 @@
+org/ecole/sgs/entities/Eleve_.class
+org/ecole/sgs/entities/Etablissement.class
+org/ecole/sgs/services/Resource.class
+org/ecole/sgs/dao/exceptions/PreexistingEntityException.class
+org/ecole/sgs/entities/Eleve.class
+org/ecole/sgs/dao/EleveDAO.class
+org/ecole/sgs/entities/Etablissement_.class
+org/ecole/sgs/dao/Factory.class
+org/ecole/sgs/services/EleveResource.class
+org/ecole/sgs/dao/EtablissementJpaController.class
+org/ecole/sgs/dao/exceptions/NonexistentEntityException.class
+org/ecole/sgs/dao/exceptions/IllegalOrphanException.class
+org/ecole/sgs/dao/AbstractDAO.class
+org/ecole/sgs/MainApp.class
+org/ecole/sgs/FXMLController.class
+org/ecole/sgs/dao/GenericDAO.class

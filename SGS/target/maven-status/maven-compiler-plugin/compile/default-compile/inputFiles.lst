@@ -1,0 +1,14 @@
+/home/armel/armel/perso/sgs/SGS/src/main/java/org/ecole/sgs/dao/GenericDAO.java
+/home/armel/armel/perso/sgs/SGS/src/main/java/org/ecole/sgs/FXMLController.java
+/home/armel/armel/perso/sgs/SGS/src/main/java/org/ecole/sgs/dao/exceptions/IllegalOrphanException.java
+/home/armel/armel/perso/sgs/SGS/src/main/java/org/ecole/sgs/dao/exceptions/NonexistentEntityException.java
+/home/armel/armel/perso/sgs/SGS/src/main/java/org/ecole/sgs/dao/Factory.java
+/home/armel/armel/perso/sgs/SGS/src/main/java/org/ecole/sgs/entities/Eleve.java
+/home/armel/armel/perso/sgs/SGS/src/main/java/org/ecole/sgs/dao/EleveDAO.java
+/home/armel/armel/perso/sgs/SGS/src/main/java/org/ecole/sgs/MainApp.java
+/home/armel/armel/perso/sgs/SGS/src/main/java/org/ecole/sgs/services/Resource.java
+/home/armel/armel/perso/sgs/SGS/src/main/java/org/ecole/sgs/dao/exceptions/PreexistingEntityException.java
+/home/armel/armel/perso/sgs/SGS/src/main/java/org/ecole/sgs/dao/EtablissementJpaController.java
+/home/armel/armel/perso/sgs/SGS/src/main/java/org/ecole/sgs/dao/AbstractDAO.java
+/home/armel/armel/perso/sgs/SGS/src/main/java/org/ecole/sgs/services/EleveResource.java
+/home/armel/armel/perso/sgs/SGS/src/main/java/org/ecole/sgs/entities/Etablissement.java

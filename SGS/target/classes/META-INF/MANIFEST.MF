@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Vendor: JBoss by Red Hat, Inc.
+Implementation-Title: Hibernate JPA 2 Metamodel Generator
+Implementation-Version: 1.3.0.Final
+Implementation-Vendor-Id: http://www.jboss.org/
+Built-By: hardy
+Build-Jdk: 1.7.0_10-ea
+Created-By: 1.7.0_10-ea (Oracle Corporation)
+Implementation-URL: http://www.jboss.org/
+Archiver-Version: Plexus Archiver
+
