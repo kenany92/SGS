@@ -1,6 +1,6 @@
 /PreJfx/nbproject/private/
-/SGS/lib/
-/SGS/target/
-/SGS/nb-configuration.xml
-/SGS/nbactions.xml
+SGS/lib/*
+SGS/target/*
+SGS/nb-configuration.xml
+SGS/nbactions.xml
 /.idea/
