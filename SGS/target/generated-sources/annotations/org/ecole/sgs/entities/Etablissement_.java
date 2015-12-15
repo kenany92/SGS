@@ -8,8 +8,10 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(Etablissement.class)
 public abstract class Etablissement_ {
 
-	public static volatile SingularAttribute<Etablissement, String> name;
+	public static volatile SingularAttribute<Etablissement, String> anneeScolaire;
 	public static volatile SingularAttribute<Etablissement, byte[]> logo;
+	public static volatile SingularAttribute<Etablissement, String> nom;
+	public static volatile SingularAttribute<Etablissement, String> sigle;
 
 }
 

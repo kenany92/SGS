@@ -20,18 +20,19 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        if(eleveRs.getAll().isEmpty()){
-            Alert al = new Alert(Alert.AlertType.CONFIRMATION," Vous n'avez encore aucun eleve dans la base de données vous devez en créer au moins un");
-            al.setTitle("Info base de données");
-            al.showAndWait();
-            
-            if(al.getResult() == ButtonType.OK){
-                run(stage);
-            }
-            
-        }else{
-            run(stage);
-        }
+//        if(eleveRs.getAll().isEmpty()){
+//            Alert al = new Alert(Alert.AlertType.CONFIRMATION," Vous n'avez encore aucun eleve dans la base de données vous devez en créer au moins un");
+//            al.setTitle("Info base de données");
+//            al.showAndWait();
+//            
+//            if(al.getResult() == ButtonType.OK){
+//                run(stage);
+//            }
+//            
+//        }else{
+//            run(stage);
+//        }
+        run(stage);
     }
 
     /**
@@ -49,12 +50,13 @@ public class MainApp extends Application {
     private void run(Stage stage) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
         
-        Scene scene = new Scene(root, Double.MAX_EXPONENT, Double.MAX_EXPONENT);
+        Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css");
 
         stage.setTitle("SGS");
         stage.getIcons().add(new Image("/img/logo.png"));
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 

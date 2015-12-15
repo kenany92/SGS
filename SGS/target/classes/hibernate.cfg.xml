@@ -6,10 +6,11 @@
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sgs?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.hbm2ddl.auto">create</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.format_sql">true</property>
     <mapping class="org.ecole.sgs.entities.Eleve"/>
     <mapping class="org.ecole.sgs.entities.Etablissement"/>
+    <mapping class="org.ecole.sgs.entities.Ecole"/>
   </session-factory>
 </hibernate-configuration>

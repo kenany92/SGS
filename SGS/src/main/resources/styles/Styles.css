@@ -4,11 +4,15 @@
 
 #top_region {
     
-    -fx-background-image: url("../img/logo.png");
-    -fx-background-repeat: no-repeat;
+    
+    //-fx-background-repeat: no-repeat;
 }
 
 #sgs{
     -fx-font-weight: bold;
-    -fx-font-size: 18;
+}
+
+#main{
+    -fx-background-image: url("../img/ecole1.jpg");
+    -fx-background-repeat: no-repeat;
 }

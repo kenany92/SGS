@@ -1,26 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.geometry.*?>
-<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane id="main" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml" fx:controller="org.ecole.sgs.FXMLController">
+<BorderPane id="main" prefHeight="369.0" prefWidth="517.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.ecole.sgs.FXMLController">
     <padding>
         <Insets bottom="10" left="10" right="10" top="10" />
     </padding>
     <top>
-        <HBox>
-        <Region prefHeight="75" prefWidth="75" fx:id="top_region" />
-        <Text text="SGS : Système de Gestion Scolaire" fx:id="sgs"  ></Text>
+        <HBox prefHeight="146.0" prefWidth="497.0">
+           <children>
+               <ImageView fitHeight="84.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                   <image>
+                        <Image url="@../img/logo.png" />
+                     </image>
+               </ImageView>
+           <Label fx:id="sgs" alignment="CENTER" contentDisplay="CENTER" prefHeight="56.0" prefWidth="444.0" text="SGS : Système de Gestion Scolaire" textOverrun="CLIP">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+           </children>
         </HBox>
     </top>
     <center>
-        <Button text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
+        <VBox prefHeight="188.0" prefWidth="497.0" BorderPane.alignment="CENTER">
+            <children>
+                <ProgressBar prefHeight="20.0" prefWidth="501.0" progress="0.0" fx:id="pbar" />
+            </children>
+        </VBox>
     </center>
+   <bottom>
+      <VBox prefHeight="10.0" prefWidth="497.0" BorderPane.alignment="CENTER">
+         <children>
+            
+            <Label alignment="CENTER" prefHeight="0.0" prefWidth="497.0" text="Copyrigth Services Laplage 2015-2016">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </bottom>
 </BorderPane>

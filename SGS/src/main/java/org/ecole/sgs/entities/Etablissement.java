@@ -7,30 +7,48 @@
 package org.ecole.sgs.entities;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Lob;
+import javax.persistence.MappedSuperclass;
 
 /**
  *
  * @author armel
  */
-@Entity
-public class Etablissement implements Serializable {
+@MappedSuperclass
+public abstract class Etablissement implements Serializable {
     private static final long serialVersionUID = 1L;
     
     @Id
-    private String name;
+    private String sigle;
+    
+    @Column(nullable = false, unique = true)
+    private String nom;
     
     @Lob
     private byte[] logo;
+    
+    @Column(nullable = false)
+    private String anneeScolaire;  //Année Scolaire
 
-    public String getName() {
-        return name;
+    public String getSigle() {
+        return sigle;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSigle(String sigle) {
+        this.sigle = sigle;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     public byte[] getLogo() {
@@ -41,10 +59,18 @@ public class Etablissement implements Serializable {
         this.logo = logo;
     }
 
+    public String getAnneeScolaire() {
+        return anneeScolaire;
+    }
+
+    public void setAnneeScolaire(String anneeScolaire) {
+        this.anneeScolaire = anneeScolaire;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (name != null ? name.hashCode() : 0);
+        hash += (sigle != null ? sigle.hashCode() : 0);
         return hash;
     }
 
@@ -54,16 +80,20 @@ public class Etablissement implements Serializable {
         if (!(object instanceof Etablissement)) {
             return false;
         }
+        
         Etablissement other = (Etablissement) object;
-        if ((this.name == null && other.name != null) || (this.name != null && !this.name.equals(other.name))) {
-            return false;
-        }
-        return true;
+        
+        return  this.sigle != null &&
+                other.getSigle() != null &&
+                this.nom != null &&
+                other.getNom() != null &&
+                this.sigle.equals(other.getSigle()) && 
+                this.nom.equals(other.getNom());
     }
 
     @Override
     public String toString() {
-        return "org.ecole.sgs.entities.Etablissement[ id=" + name + " ]";
+        return "org.ecole.sgs.entities.Etablissement[ id=" + sigle + " ]";
     }
     
 }
