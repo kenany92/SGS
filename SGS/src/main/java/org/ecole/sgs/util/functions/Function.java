@@ -41,14 +41,15 @@ public class Function {
         return beguin+"/"+end;
     }
     
-    public void openEtabType() throws IOException {
+    public void openEtabType(String src, String title) throws IOException {
+        String title_r = title != null? title : "titre";
         Parent root;
                 try {
                         
-                        root = FXMLLoader.load(getClass().getResource("/fxml/etab_type.fxml"));
+                        root = FXMLLoader.load(getClass().getResource(src));
                         Scene scene = new Scene(root);
                         Stage stage = new Stage();
-                        stage.setTitle("Type Etablissement");
+                        stage.setTitle(title_r);
                         stage.setScene(scene);
                         stage.show();
 //                    ((Node)event.getSource()).getScene().getWindow().hide();

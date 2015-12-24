@@ -76,10 +76,10 @@ public class EcoleCreateController implements Initializable {
     }
     
     @FXML
-    private void submitHandle(ActionEvent event){
+    private void submitHandle(ActionEvent event) throws IOException{
         
         if(checkFormValidation()){
-            perform();
+            perform(event);
         }
         
         
@@ -87,7 +87,7 @@ public class EcoleCreateController implements Initializable {
     
     @FXML
     private void prevHandle(ActionEvent event) throws IOException{
-        fn.openEtabType();
+        fn.openEtabType("/fxml/etab_type.fxml", "Type etablissement");
         ((Node)event.getSource()).getScene().getWindow().hide();
     }
     
@@ -99,7 +99,7 @@ public class EcoleCreateController implements Initializable {
                asb_f != null && ase_f != null;
     }
     
-    private void perform(){
+    private void perform(ActionEvent event) throws IOException{
         LocalDate local1 = asb_f.getValue();
         Instant inst1 = Instant.from(local1.atStartOfDay(ZoneId.systemDefault()));
         Date date1 = Date.from(inst1);
@@ -131,6 +131,8 @@ public class EcoleCreateController implements Initializable {
         
         if(verf != null){
             System.out.println("L' école "+verf.getNom()+" a été créée avec succès");
+            fn.openEtabType("/fxml/user_create.fxml", "Type etablissement");
+            ((Node)event.getSource()).getScene().getWindow().hide();
         }else{
             System.out.println("Erreur lors de la création de l'école");
         }

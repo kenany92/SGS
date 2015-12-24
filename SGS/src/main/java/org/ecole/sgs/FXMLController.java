@@ -10,18 +10,13 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-import javafx.stage.Stage;
 import org.ecole.sgs.entities.Etablissement;
 import org.ecole.sgs.services.EtablissementResource;
-import org.ecole.sgs.util.enums.EtablissementType;
 import org.ecole.sgs.util.functions.Function;
 
 public class FXMLController implements Initializable {
@@ -71,7 +66,7 @@ public class FXMLController implements Initializable {
                         
                         if(al.getResult() == ButtonType.OK){
                             try {
-                                fn.openEtabType();
+                                fn.openEtabType("/fxml/etab_type.fxml", "Type etablissement");
                             } catch (IOException ex) {
                                 Logger.getLogger(FXMLController.class.getName()).log(Level.SEVERE, null, ex);
                             }

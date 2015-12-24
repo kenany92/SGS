@@ -5,6 +5,7 @@
     <class>org.ecole.sgs.entities.Etablissement</class>
     <class>org.ecole.sgs.entities.Eleve</class>
     <class>org.ecole.sgs.entities.Ecole</class>
+    <class>org.ecole.sgs.entities.User</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sgs?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

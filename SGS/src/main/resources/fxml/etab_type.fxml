@@ -37,9 +37,6 @@
                <opaqueInsets>
                   <Insets left="10.0" />
                </opaqueInsets>
-               <effect>
-                  <Glow />
-               </effect>
             </Button>
          </children>
       </GridPane>

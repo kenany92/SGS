@@ -16,9 +16,7 @@
       <BorderPane layoutX="-1.0" layoutY="-1.0" prefHeight="400.0" prefWidth="600.0">
          <bottom>
             <Button fx:id="submit" mnemonicParsing="false" onAction="#submitHandle" prefHeight="44.0" prefWidth="83.0" text="Créer" BorderPane.alignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
+               
                <BorderPane.margin>
                   <Insets bottom="10.0" />
                </BorderPane.margin>
