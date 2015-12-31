@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="508.0" prefWidth="725.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.ecole.sgs.ui.controller.ClasseController">
+    <stylesheets>
+        <URL value="@/styles/Styles.css" />
+    </stylesheets>
+   <children>
+      <BorderPane prefHeight="428.0" prefWidth="725.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <top>
+            <FlowPane prefHeight="61.0" prefWidth="725.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="63.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label alignment="CENTER" prefHeight="42.0" prefWidth="594.0" text="Label">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="28.0" prefWidth="705.0" text="Créer une classe" />
+               </children>
+            </FlowPane>
+         </top>
+         <bottom>
+            <FlowPane prefHeight="35.0" prefWidth="705.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="submit" mnemonicParsing="false" prefHeight="41.0" prefWidth="703.0" text="Créer" onAction="#submitHandle"  />
+                  <ImageView fitHeight="32.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="668.0" text="Copyright Services Laplage 2015-2016">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+         </bottom>
+         <center>
+            <GridPane hgap="10.0" prefHeight="256.0" prefWidth="705.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="91.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="112.0" minHeight="5.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="173.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="202.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="202.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="202.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ComboBox fx:id="section" layoutX="199.0" layoutY="346.0" onValueChange="#sectionChangeHandle" prefHeight="26.0" prefWidth="232.0" promptText="Section" BorderPane.alignment="CENTER" />
+                  <ComboBox fx:id="classe_names" layoutX="39.0" layoutY="346.0" onValueChange="#classeChangeHandle" prefHeight="26.0" prefWidth="213.0" promptText="Noms" BorderPane.alignment="CENTER" GridPane.columnIndex="1" />
+                  <TextField fx:id="first_amount" prefHeight="40.0" prefWidth="338.0" promptText="Montant première tranche" GridPane.rowIndex="2" onTextChange="#fieldChangeHandle"  />
+                  <DatePicker fx:id="first_limit" prefHeight="26.0" prefWidth="270.0" promptText="Delai" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="second_amount" prefHeight="40.0" prefWidth="353.0" promptText="Montant deuxième tranche" GridPane.rowIndex="3" onTextChange="#fieldChangeHandle" />
+                  <TextField fx:id="third_amount" prefHeight="40.0" prefWidth="338.0" promptText="Montant troisième tranche" GridPane.rowIndex="4" onTextChange="#fieldChangeHandle" />
+                  <TextField fx:id="files_amount" prefHeight="40.0" prefWidth="338.0" promptText="Montant dossiers" GridPane.rowIndex="5" onTextChange="#fieldChangeHandle" />
+                  <DatePicker fx:id="second_limit" prefHeight="26.0" prefWidth="270.0" promptText="Delai" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <DatePicker fx:id="third_limit" prefHeight="26.0" prefWidth="270.0" promptText="Delai" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <DatePicker fx:id="files_limit" prefHeight="26.0" prefWidth="270.0" promptText="Delai" GridPane.columnIndex="1" GridPane.rowIndex="5" onValueChange="#dateChangeHandle" />
+                  <DatePicker fx:id="inscription_limit" prefHeight="26.0" prefWidth="270.0" promptText="Delai" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="inscription_amount" prefHeight="40.0" prefWidth="338.0" promptText="Montant inscription" GridPane.rowIndex="1" onTextChange="#fieldChangeHandle" />
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </GridPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

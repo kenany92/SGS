@@ -11,7 +11,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import org.ecole.sgs.util.enums.Section;
+import org.ecole.sgs.util.enums.SectionName;
 
 /**
  *
@@ -23,24 +23,24 @@ public class Ecole extends Etablissement implements Serializable{
     
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private Section firstSection;
+    private SectionName firstSection;
     
     @Enumerated(EnumType.STRING)
-    private Section secondSection;
+    private SectionName secondSection;
 
-    public Section getFirstSection() {
+    public SectionName getFirstSection() {
         return firstSection;
     }
 
-    public void setFirstSection(Section firstSection) {
+    public void setFirstSection(SectionName firstSection) {
         this.firstSection = firstSection;
     }
 
-    public Section getSecondSection() {
+    public SectionName getSecondSection() {
         return secondSection;
     }
 
-    public void setSecondSection(Section secondSection) {
+    public void setSecondSection(SectionName secondSection) {
         this.secondSection = secondSection;
     }
 

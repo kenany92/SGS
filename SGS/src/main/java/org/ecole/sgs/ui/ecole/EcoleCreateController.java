@@ -23,8 +23,10 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import org.ecole.sgs.entities.Ecole;
+import org.ecole.sgs.entities.Section;
 import org.ecole.sgs.services.EcoleResource;
-import org.ecole.sgs.util.enums.Section;
+import org.ecole.sgs.services.SectionResource;
+import org.ecole.sgs.util.enums.SectionName;
 import org.ecole.sgs.util.functions.Function;
 
 /**
@@ -62,6 +64,8 @@ public class EcoleCreateController implements Initializable {
     private Button submit;
     
     private final EcoleResource ecoleRs = EcoleResource.builder();
+    
+    private final SectionResource sectionRs = SectionResource.builder();
     
     private Ecole ecole;
     
@@ -101,12 +105,12 @@ public class EcoleCreateController implements Initializable {
     
     private void perform(ActionEvent event) throws IOException{
         LocalDate local1 = asb_f.getValue();
-        Instant inst1 = Instant.from(local1.atStartOfDay(ZoneId.systemDefault()));
-        Date date1 = Date.from(inst1);
+//        Instant inst1 = Instant.from(local1.atStartOfDay(ZoneId.systemDefault()));
+        Date date1 = Function.localDateToDate(local1);
         
         LocalDate local2 = ase_f.getValue();
-        Instant inst2 = Instant.from(local2.atStartOfDay(ZoneId.systemDefault()));
-        Date date2 = Date.from(inst2);
+//        Instant inst2 = Instant.from(local2.atStartOfDay(ZoneId.systemDefault()));
+        Date date2 = Function.localDateToDate(local2);
         
         String as = Function.dateToAs(date1, date2);
         ecole = new Ecole();
@@ -115,14 +119,18 @@ public class EcoleCreateController implements Initializable {
         ecole.setAnneeScolaire(as);
         
         if(fr.isSelected()){
-            ecole.setFirstSection(Section.FRANCOPHONE);
-            
+            ecole.setFirstSection(SectionName.FRANCOPHONE);
+            addSection("FR", SectionName.FRANCOPHONE.toString(), true);
             if(en.isSelected()){
-                ecole.setSecondSection(Section.ANGLOPHONE);
+                ecole.setSecondSection(SectionName.ANGLOPHONE);
+                addSection("EN", SectionName.ANGLOPHONE.toString(), true);
+            }else{
+                addSection("EN", SectionName.ANGLOPHONE.toString(), false);
             }
         }
         else{
-            ecole.setFirstSection(Section.ANGLOPHONE);
+            ecole.setFirstSection(SectionName.ANGLOPHONE);
+            addSection("FR", SectionName.FRANCOPHONE.toString(), false);
         }
         
         ecoleRs.add(ecole);
@@ -136,6 +144,17 @@ public class EcoleCreateController implements Initializable {
         }else{
             System.out.println("Erreur lors de la création de l'école");
         }
+        
+    }
+    
+    private void addSection(String id, String name, boolean enable){
+        Section sec = new Section();
+        
+        sec.setEnable(enable);
+        sec.setId(id);
+        sec.setName(name);
+        
+        sectionRs.add(sec);
         
     }
     

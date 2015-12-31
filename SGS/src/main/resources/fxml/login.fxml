@@ -1,14 +1,51 @@
- <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.net.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.ecole.sgs.LoginController">
-    <stylesheets>
-        <URL value="@/styles/Styles.css"/>
-    </stylesheets>
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" xmlns="http://javafx.com/javafx/8" 
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.ecole.sgs.LoginController">
+   <top>
+      <Label fx:id="banner" alignment="CENTER" prefHeight="40.0" prefWidth="90.0" text="SGS" BorderPane.alignment="CENTER" />
+   </top>
+   <bottom>
+      <Label fx:id="copyrigth" alignment="CENTER" prefHeight="34.0" prefWidth="486.0" text="Copyrigth Services Laplage 2015-2016 " BorderPane.alignment="CENTER">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+   </bottom>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="600.0" minWidth="10.0" prefWidth="596.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0" minWidth="0.0" prefWidth="4.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="111.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="140.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="211.0" minHeight="0.0" prefHeight="54.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="211.0" minHeight="0.0" prefHeight="54.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="211.0" minHeight="10.0" prefHeight="73.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="211.0" minHeight="3.0" prefHeight="48.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="login_label" prefHeight="48.0" prefWidth="606.0" text="Login" />
+            <Label fx:id="psw_label" prefHeight="38.0" prefWidth="596.0" text="Mot de passe" GridPane.rowIndex="2" />
+            <TextField fx:id="login_field" maxWidth="1.7976931348623157E308" prefHeight="43.0" GridPane.rowIndex="1" />
+            <PasswordField fx:id="psw_field" prefHeight="43.0" prefWidth="596.0" GridPane.rowIndex="3" />
+            <Button fx:id="submit" mnemonicParsing="false" prefHeight="44.0" prefWidth="596.0" text="Connexion" GridPane.rowIndex="4" onAction="#submitAction"  />
+            <Label fx:id="state" prefHeight="47.0" prefWidth="596.0" GridPane.rowIndex="5" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </GridPane>
+   </center>
+</BorderPane>

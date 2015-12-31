@@ -1,123 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="549.0" prefWidth="946.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.ecole.sgs.RootController">
-    <stylesheets>
-        <URL value="@/styles/Styles.css" />
-    </stylesheets>
-   <children>
-      <BorderPane prefHeight="549.0" prefWidth="936.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
-         <top>
-            <Label alignment="CENTER" prefHeight="48.0" prefWidth="611.0" text="SGS" BorderPane.alignment="CENTER">
-               <font>
-                  <Font size="34.0" />
-               </font></Label>
-         </top>
-         <bottom>
-            <FlowPane prefHeight="35.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" 
+            prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.ecole.sgs.RootController">
+   <top>
+      <HBox prefHeight="130.0" prefWidth="1280.0">
+         <children>
+            <VBox prefHeight="103.0" prefWidth="1275.0">
                <children>
-                  <ImageView fitHeight="38.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
-                     <FlowPane.margin>
-                        <Insets left="10.0" />
-                     </FlowPane.margin>
-                     <image>
-                        <Image url="@../../../../../../../LOGO/LOGO%20SERVICES.png" />
-                     </image>
-                  </ImageView>
-                  <Label alignment="CENTER" prefHeight="28.0" prefWidth="791.0" text="Copirigth Services Laplage 2015-2016">
+                  <Label alignment="CENTER" prefHeight="66.0" prefWidth="1276.0" text="DÉNOMINATION DE L'ÉCOLE">
                      <font>
-                        <Font size="10.0" />
+                        <Font name="System Bold" size="24.0" />
                      </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
                   </Label>
+                  <FlowPane prefHeight="60.0" prefWidth="1275.0">
+                     <children>
+                        <Label prefHeight="50.0" prefWidth="113.0" text="Trier par : ">
+                           <FlowPane.margin>
+                              <Insets left="40.0" right="20.0" />
+                           </FlowPane.margin>
+                        </Label>
+                        <ComboBox prefHeight="42.0" prefWidth="204.0" promptText="Critère de sélection">
+                           <FlowPane.margin>
+                              <Insets right="30.0" />
+                           </FlowPane.margin>
+                        </ComboBox>
+                        <TextField prefHeight="41.0" prefWidth="367.0" promptText="Valeur du critère">
+                           <FlowPane.margin>
+                              <Insets right="30.0" />
+                           </FlowPane.margin>
+                        </TextField>
+                        <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="176.0" text="Rechercher" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </FlowPane>
                </children>
-            </FlowPane>
-         </bottom>
-         <center>
-            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
-              <tabs>
-                <Tab text="Accueil">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <BorderPane layoutY="-1.0" prefHeight="433.0" prefWidth="926.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
-                                 <top>
-                                    <FlowPane prefHeight="65.0" prefWidth="590.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <ImageView fitHeight="66.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true" />
-                                          <Label alignment="CENTER" prefHeight="63.0" prefWidth="791.0" text="Label" />
-                                       </children></FlowPane>
-                                 </top>
-                              </BorderPane>
-                           </children>
-                        </AnchorPane>
-                  </content>
-                </Tab>
-                <Tab closable="false" text="Gestion des classes">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <BorderPane layoutX="1.0" layoutY="1.0" prefHeight="430.0" prefWidth="936.0">
-                                 <top>
-                                    <FlowPane prefHeight="44.0" prefWidth="936.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <Label alignment="CENTER" prefHeight="47.0" prefWidth="135.0" text="Trier par : ">
-                                             <FlowPane.margin>
-                                                <Insets left="10.0" top="5.0" />
-                                             </FlowPane.margin>
-                                          </Label>
-                                          <ComboBox prefHeight="38.0" prefWidth="150.0" promptText="Critère">
-                                             <FlowPane.margin>
-                                                <Insets right="20.0" />
-                                             </FlowPane.margin></ComboBox>
-                                          <TextField prefHeight="38.0" prefWidth="371.0" promptText="Valeu du critère">
-                                             <FlowPane.margin>
-                                                <Insets right="20.0" />
-                                             </FlowPane.margin>
-                                          </TextField>
-                                          <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="128.0" text="OK" />
-                                       </children>
-                                    </FlowPane>
-                                 </top>
-                                 <bottom>
-                                    <Button mnemonicParsing="false" prefHeight="57.0" prefWidth="898.0" text="Ajoutez une salle de classe" textFill="#0f0fda" BorderPane.alignment="CENTER">
-                                       <font>
-                                          <Font name="System Bold Italic" size="23.0" />
-                                       </font>
-                                       <BorderPane.margin>
-                                          <Insets bottom="10.0" />
-                                       </BorderPane.margin></Button>
-                                 </bottom>
-                                 <center>
-                                    <TableView prefHeight="301.0" prefWidth="937.0" BorderPane.alignment="CENTER">
-                                      <columns>
-                                        <TableColumn prefWidth="75.0" text="Classe" />
-                                        <TableColumn prefWidth="117.0" text="Salle de classe" />
-                                          <TableColumn prefWidth="155.0" text="Enseignant" />
-                                          <TableColumn prefWidth="156.0" text="Nombre de places" />
-                                          <TableColumn prefWidth="139.0" text="Nombre d'élèves" />
-                                          <TableColumn prefWidth="114.0" text="Frais scolaire" />
-                                          <TableColumn prefWidth="90.0" text="Modifier" />
-                                          <TableColumn prefWidth="88.0" text="Supprimer" />
-                                      </columns>
-                                       <BorderPane.margin>
-                                          <Insets bottom="10.0" top="10.0" />
-                                       </BorderPane.margin>
-                                    </TableView>
-                                 </center>
-                              </BorderPane>
-                           </children></AnchorPane>
-                  </content>
-                </Tab>
-              </tabs>
-            </TabPane>
-         </center>
-      </BorderPane>
-   </children>
-</AnchorPane>
+            </VBox>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <FlowPane prefHeight="138.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="58.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+               <FlowPane.margin>
+                  <Insets left="20.0" />
+               </FlowPane.margin>
+            </ImageView>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="20.0" />
+         </BorderPane.margin></FlowPane>
+   </bottom>
+   <left>
+      <Label prefHeight="16.0" prefWidth="77.0" text="Label" BorderPane.alignment="CENTER" />
+   </left>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Accueil">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+          <Tab text="Gestion des salles">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="499.0" prefWidth="1203.0">
+                     <children>
+                        <BorderPane layoutX="1.0" layoutY="1.0" prefHeight="558.0" prefWidth="1201.0">
+                           <bottom>
+                              <FlowPane prefHeight="173.0" prefWidth="1201.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Button fx:id="add_salle" mnemonicParsing="false" prefHeight="56.0" prefWidth="568.0" text="Ajouter une salle de classe">
+                                       <FlowPane.margin>
+                                          <Insets left="20.0" />
+                                       </FlowPane.margin>
+                                    </Button>
+                                    <Button fx:id="add_classe" mnemonicParsing="false" onAction="#addClasseAction"  prefHeight="58.0" prefWidth="543.0" text="Ajouter une classe">
+                                       <FlowPane.margin>
+                                          <Insets left="40.0" top="10.0" />
+                                       </FlowPane.margin>
+                                    </Button>
+                                 </children>
+                              </FlowPane>
+                           </bottom>
+                           <center>
+                              <TableView maxWidth="5000.0" prefHeight="490.0" prefWidth="1204.0" BorderPane.alignment="CENTER">
+                                <columns>
+                                  <TableColumn prefWidth="104.0" text="CLASSE" />
+                                  <TableColumn prefWidth="154.0" text="SALLE DE CLASSE" />
+                                    <TableColumn minWidth="0.0" prefWidth="119.0" text="SCOLARITE" />
+                                    <TableColumn minWidth="0.0" prefWidth="131.0" text="ENSEIGNANT" />
+                                    <TableColumn minWidth="0.0" prefWidth="169.0" text="NOMBRE DE PLACES" />
+                                    <TableColumn minWidth="0.0" prefWidth="174.0" text="NOMBRE D'ELEVES" />
+                                    <TableColumn minWidth="0.0" prefWidth="115.0" text="MODIFIER" />
+                                    <TableColumn minWidth="0.0" prefWidth="213.0" text="SUPPRIMER" />
+                                </columns>
+                              </TableView>
+                           </center>
+                        </BorderPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Gestion des élèves">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+        </tabs>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </TabPane>
+   </center>
+</BorderPane>

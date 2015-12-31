@@ -7,6 +7,12 @@
 package org.ecole.sgs.util.functions;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,6 +27,8 @@ import org.ecole.sgs.util.enums.EtablissementType;
  * @author armel
  */
 public class Function {
+    
+    private static final DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
     
     public static boolean defaultStringValidation(String candidate){
         
@@ -58,5 +66,30 @@ public class Function {
                 }
         
         
+    }
+    
+    public static Date localDateToDate(LocalDate local){
+        Instant inst1 = Instant.from(local.atStartOfDay(ZoneId.systemDefault()));
+        Date date = Date.from(inst1);
+        return date;
+    }
+    
+    public static String parseDate(Date date){
+        return format.format(date);
+    }
+    
+    public static Double stringToDouble(String val) throws Exception{
+       
+        try{
+            double value = Double.parseDouble(val);
+            return value;
+        }catch(NumberFormatException pex){
+            throw new Exception("Veuillez saisir un nombre correct");
+        }
+        
+    }
+    
+    public static Function getFunction(){
+        return new Function();
     }
 }
